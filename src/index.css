@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+@layer base {
+  * {
+    font-feature-settings: "kern" 1;
+  }
+  
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .font-serif {
+    font-family: 'Crimson Text', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation-fill-mode: both;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .zoom-in {
+    animation: zoomIn 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 36px !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 24px !important;
+  }
+  
+  .hero-names {
+    font-size: 32px !important;
+    letter-spacing: 0.1em !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading optimization */
+img {
+  loading: lazy;
+  decoding: async;
+}
